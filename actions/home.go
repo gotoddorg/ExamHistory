@@ -5,7 +5,7 @@ import (
 
 	"google.golang.org/appengine/log"
 
-	"github.com/soma/examhistory/models"
+	"github.com/gotoddorg/examhistory/models"
 	"google.golang.org/appengine"
 )
 
