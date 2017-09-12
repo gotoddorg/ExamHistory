@@ -3,9 +3,9 @@
 <%= form_for(person, {action: "/people", method: "POST"}) { %>
   <%= f.InputTag("Name") %>
   <%= f.InputTag("JobTitle") %>
-  <%= f.TextArea("Address.Street", {value: person.Address.Street, label: "Street"}) %>
-  <%= f.InputTag("Address.City", {value: person.Address.City, label: "City"}) %>
-  <%= f.InputTag("Address.State", {value: person.Address.State, label: "State"}) %>
-  <%= f.InputTag("Address.PostalCode", {value: person.Address.PostalCode, label: "PostalCode"}) %>
+  <%= f.TextArea("Address.Street") %>
+  <%= f.InputTag("Address.City") %>
+  <%= f.InputTag("Address.State") %>
+  <%= f.InputTag("Address.PostalCode") %>
   <button class="btn btn-success" type="submit">Save</button>
 <% } %>
