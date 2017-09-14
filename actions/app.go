@@ -1,6 +1,7 @@
 package actions
 
 import (
+	"fmt"
 	"net/http"
 
 	"github.com/gobuffalo/packr"
@@ -15,8 +16,14 @@ func App() http.Handler {
 		app = mux.NewRouter()
 		app.HandleFunc("/", Home).Methods("GET")
 		app.HandleFunc("/people", PersonCreate).Methods("POST")
+		app.HandleFunc("/people", PeopleList).Methods("GET")
 
 		app.PathPrefix("/assets").Handler(http.StripPrefix("/assets", http.FileServer(assets)))
 	}
 	return app
+}
+
+func handleError(res http.ResponseWriter, err error) {
+	res.WriteHeader(500)
+	fmt.Fprint(res, err)
 }

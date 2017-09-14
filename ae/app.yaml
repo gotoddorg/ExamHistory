@@ -1,6 +1,7 @@
 runtime: go
 api_version: "go1.8"
 version: 2
+application: "soma-12345"
 
 handlers:
 - url: /.*
